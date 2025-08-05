@@ -1,0 +1,159 @@
+/* For whole html */
+html{
+    background-image:url(./images/background.jpg);
+    font-family:tahoma;
+}
+.navbar ul{
+    list-style-type:none;
+    display:flex;
+    justify-content:space-evenly;
+    padding:5px;
+}
+a{
+    display:block;
+    text-decoration:none;
+    border-radius:10px;
+    position:relative;
+    color:white;
+    padding:15px 30px 15px 30px;
+    font-size:1.5vw;
+    transition: all 0.3s;
+}
+/* Underline effect */
+a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 15px; /* Adjust based on spacing */
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+/* Hover state - underline expands from center */
+a:hover::after {
+    width: 60%;
+    
+}
+a:hover{
+    background:black;
+    
+}
+header{
+    color:black;
+    font-size:3vw;
+    display:flex;
+    justify-content:center;
+}
+p{
+    /* display:inline-block; */
+    font-size:1.3vw;
+    margin-top:5px;
+}
+img {
+    border:3px black solid;
+    padding: 2px;
+}
+h2{
+    margin-bottom:5px;
+    text-align:center;
+}
+
+
+
+/* For the about page */
+#aboutSection section{
+    background:rgb(255,255,255,0.6);
+    margin-bottom:30px;
+}
+#ruleSection, #skillSection{
+    display:none;
+}
+.about-side-by-side{
+    display:flex;
+    align-items:center;
+}
+.about-textbox{
+    display:flex;
+    flex-direction:column;
+    text-align:justify;
+    line-height:1.5;
+    justify-content: center;
+    padding-left: 300px;
+    padding-right: 300px;
+    
+}
+
+
+/* For the rule page */
+#ruleSection section{
+    background:rgb(238, 232, 170, 0.7);
+    margin-bottom:30px;
+}
+#OriginalRules p, #ModernRules p{
+    text-align:justify;
+    padding-top:50px;
+    padding-left:100px;
+    padding-right:100px;
+}
+#ModernRules{
+    text-align: center;
+}
+#ruleSection img{
+    display:inline-block;
+}
+
+
+
+/* For the skill page */
+#skillSection{
+    background:rgb(255, 165, 0,0.6);
+}
+#skillSection p, #skillSection h3{
+    text-align:justify;
+    padding-top:50px;
+    padding-left:100px;
+    padding-right:100px;
+}
+#skillSection img{
+    border:none;
+    display:inline-block;
+    align-items: center;
+}
+#minigame{
+    margin-top:60px;
+    text-align:center;
+}
+
+
+/* Animation */
+.hidden {
+    opacity: 0;
+    transform: translateX(100px); /* starts off-screen on right */
+    transition: all 1s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateX(0); /* slides into place */
+}
+
+
+
+/* Ball animation */
+@keyframes spinBall {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+#ballId.spin {
+    animation: spinBall 0.5s ease;
+}
+
+
+/* responsive */
+@media
